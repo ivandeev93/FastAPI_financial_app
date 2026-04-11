@@ -10,7 +10,7 @@ def get_wallet(db: Session, wallet_name: str | None = None):
     if wallet_name is None:
         # Суммируем все значения из словаря BALANCE
         wallets = wallets_repository.get_all_wallets(db)
-        return {"total_balance": sum([w.amount for w in wallets])}
+        return {"total_balance": sum([w.balance for w in wallets])}
 
     # Проверяем существует ли запрашиваемый кошелек
     if not wallets_repository.is_wallet_exist(db, wallet_name):
