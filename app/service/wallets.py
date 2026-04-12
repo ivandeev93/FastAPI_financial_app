@@ -3,13 +3,14 @@ from app.schemas import CreateWalletRequest
 from app.repository import wallets as wallets_repository
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
+from app.models import User
 
 
-def get_wallet(db: Session, wallet_name: str | None = None):
+def get_wallet(db: Session, current_user: User, wallet_name: str | None = None):
     # Если имя кошелька не указано - считаем общий баланс
     if wallet_name is None:
         # Суммируем все значения из словаря BALANCE
-        wallets = wallets_repository.get_all_wallets(db)
+        wallets = wallets_repository.get_all_wallets(db, user.id)
         return {"total_balance": sum([w.balance for w in wallets])}
 
     # Проверяем существует ли запрашиваемый кошелек

@@ -2,6 +2,7 @@ from app.database import SessionLocal
 from app.models import Wallet
 from sqlalchemy.orm import Session
 from decimal import Decimal
+from app.models import User
 
 
 def is_wallet_exist(db: Session, wallet_name: str) -> bool:
@@ -24,8 +25,8 @@ def add_expense(db: Session, wallet_name: str, amount: Decimal) -> Wallet:
     return wallet
 
 
-def get_all_wallets(db: Session, ) -> list[Wallet]:
-    return db.query(Wallet).all()
+def get_all_wallets(db: Session, user_id: int) -> list[Wallet]:
+    return db.query(Wallet).filter(User.id == user_id).all()
 
 
 def create_wallet(db: Session, wallet_name: str, amount: Decimal) -> Wallet:
