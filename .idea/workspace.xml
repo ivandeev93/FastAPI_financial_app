@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0bdbd39-9cbe-4849-80f9-89c0d7c65409" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_api/test_operations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FastAPI_financial_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FastAPI_financial_app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_api/test_operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_api/test_operations.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +39,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python tests.pytest in Desktop.executor": "Run",
+    "Python tests.pytest in Рабочий стол.executor": "Run",
     "Python.test_demo.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
@@ -50,15 +49,14 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="pytest in Desktop" type="tests" factoryName="py.test" nameIsGenerated="true">
+    <configuration name="pytest in Рабочий стол" type="tests" factoryName="py.test" nameIsGenerated="true">
       <module name="FastAPI_financial_app" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.11 (FastAPI_financial_app)" />
       <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
@@ -72,7 +70,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-598b0484d0b5-e2d783800521-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.26927.74" />
+        <option value="bundled-python-sdk-348a24fa61fa-5312c7369657-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.23774.444" />
       </set>
     </attachedChunks>
   </component>
