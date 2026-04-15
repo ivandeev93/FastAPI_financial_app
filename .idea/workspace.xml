@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0bdbd39-9cbe-4849-80f9-89c0d7c65409" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/FastAPI_financial_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FastAPI_financial_app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/enum.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_api/test_operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_api/test_operations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/wallets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repository/wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repository/wallets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/service/wallets.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/wallets.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,19 +39,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.pytest in Desktop.executor": "Run",
-    "Python tests.pytest in Рабочий стол.executor": "Run",
-    "Python.test_demo.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Иван/FastAPI_financial_app"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.pytest in Desktop.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in Рабочий стол.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_demo.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Иван/FastAPI_financial_app&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="pytest in Рабочий стол" type="tests" factoryName="py.test" nameIsGenerated="true">
       <module name="FastAPI_financial_app" />
@@ -70,7 +74,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-348a24fa61fa-5312c7369657-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.23774.444" />
+        <option value="bundled-python-sdk-598b0484d0b5-e2d783800521-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.26927.74" />
       </set>
     </attachedChunks>
   </component>
