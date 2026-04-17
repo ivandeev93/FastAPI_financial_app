@@ -101,6 +101,22 @@ def get_operations_list(
 async def transfer_between_wallets(
         db: Session, user_id: int, from_wallet_id: int, to_wallet_id: int, amount: Decimal,
 ) -> OperationResponse:
+    """
+    Переводит деньги между кошельками пользователя с конвертацией валют при необходимости
+
+    Args:
+        db: Сессия базы данных
+        user_id: Идентификатор пользователя
+        from_wallet_id: Идентификатор кошелька-отправителя
+        to_wallet_id: Идентификатор кошелька-получателя
+        amount: Сумма перевода
+
+    Returns:
+        Информация о созданной операции перевода
+
+    Raises:
+        HTTPException: Если кошелек не найден или недостаточно средств
+    """
     from_wallet = wallets_repository.get_wallet_by_id(db, from_wallet_id, user_id)
     to_wallet = wallets_repository.get_wallet_by_id(db, to_wallet_id, user_id)
 

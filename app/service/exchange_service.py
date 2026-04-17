@@ -33,7 +33,7 @@ async def get_exchange_rate(base: CurrencyEnum, target: CurrencyEnum) -> Decimal
     timeout = aiohttp.ClientTimeout(total=5.0)
 
     try:
-        async with aiohttp.ClientTimeout(timeout=timeout) as session:
+        async with aiohttp.ClientSession(timeout=timeout) as session:
             async with session.get(url) as response:
                 response.raise_for_status()
                 data = await response.json()

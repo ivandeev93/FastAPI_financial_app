@@ -1,29 +1,41 @@
 from app.database import SessionLocal
-from app.schemas import CreateWalletRequest
+from app.enum import CurrencyEnum
+from app.schemas import CreateWalletRequest, TotalBalance, WalletResponse
 from app.repository import wallets as wallets_repository
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from app.models import User
-from app.schemas import WalletResponse
+from app.service import exchange_service
+from decimal import Decimal
 
 
-def get_wallet(db: Session, current_user: User, wallet_name: str | None = None):
+async def get_total_balance(db: Session, current_user: User) -> TotalBalance:
+    """
+    Получает баланс кошелька или общий баланс всех кошельков пользователя
+
+    Args:
+        db:
+        current_user:
+
+    Returns:
+        Словарь с информацией о балансе (либо конкретного кошелька, либо общий баланс)
+
+    Raises:
+        HTTPException: Если указанный кошелек не найден
+    """
     # Если имя кошелька не указано - считаем общий баланс
-    if wallet_name is None:
-        # Суммируем все значения из словаря BALANCE
-        wallets = wallets_repository.get_all_wallets(db, current_user.id)
-        return {"total_balance": sum([w.balance for w in wallets])}
+    wallets = wallets_repository.get_all_wallets(db, current_user.id)
+    total_balance = Decimal(0)
 
-    # Проверяем существует ли запрашиваемый кошелек
-    if not wallets_repository.is_wallet_exist(db, current_user.id, wallet_name):
-        raise HTTPException(
-            status_code=404,
-            detail=f"Wallet '{wallet_name}' not found"
-        )
+    for wallet in wallets:
+        if wallet.currency == CurrencyEnum.RUB:
+            total_balance += wallet.balance
+        else:
+            exchange_rate = await exchange_service.get_exchange_rate(wallet.currency, CurrencyEnum.RUB)
+            total_balance += exchange_rate * wallet.balance
 
-    # Получаем баланс конкретного кошелька
-    wallet = wallets_repository.get_wallet_balance_by_name(db, current_user.id, wallet_name)
-    return {"wallet": wallet.name, "balance": wallet.balance}
+    return TotalBalance(total_balance=total_balance)
+
 
 
 def create_wallet(db: Session, current_user: User, wallet: CreateWalletRequest) -> WalletResponse:
