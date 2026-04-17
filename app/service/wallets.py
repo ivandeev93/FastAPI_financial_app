@@ -39,3 +39,8 @@ def create_wallet(db: Session, current_user: User, wallet: CreateWalletRequest) 
     db.commit()
     # Возвращаем информацию о созданном кошельке
     return WalletResponse.model_validate(wallet)
+
+
+def get_all_wallets(db: Session, current_user: User) -> list[WalletResponse]:
+    wallets = wallets_repository.get_all_wallets(db, current_user.id)
+    return [WalletResponse.model_validate(wallet) for wallet in wallets]
